@@ -1,0 +1,119 @@
+@import url(../../node_modules/normalize.css/normalize.css);
+
+.footer {
+  background: #1f1f1f;
+  padding-bottom: 20px;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.footer_logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.footer_social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.social-item + .social-item {
+  margin-left: 10px;
+}
+
+.footer_list {
+  padding: 0;
+  margin: 0;
+}
+
+.footer_nav-item-header {
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.footer_nav-item + .footer_nav-item {
+  margin-top: 30px;
+}
+
+.footer_list-item {
+  font-weight: 300;
+}
+
+.footer_list-item + .footer_list-item {
+  margin-top: 13.5px;
+}
+
+.footer_disclaimer {
+  position: relative;
+  margin-top: 50px;
+  padding-top: 1px;
+  font-weight: 300;
+}
+
+.footer_disclaimer::before {
+  background: white;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -15px;
+  width: 111%;
+  height: 1px;
+}
+
+.footer_disclaimer p {
+  text-align: center;
+  line-height: 1.55;
+}
+
+.footer_rights {
+  text-align: center;
+}
+
+.container {
+  max-width: 320px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Roboto", sans-serif;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+}
