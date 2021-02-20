@@ -36,6 +36,7 @@ module.exports.dist = function pug2html() {
 			pretty: true
 		}))
 		.pipe(gulp.dest(`./dist/`))
+		.pipe(gulp.dest(`./`))
 }
 
 
