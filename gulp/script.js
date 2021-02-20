@@ -22,6 +22,6 @@ module.exports.dist = function script() {
 		.pipe(sourcemaps.init())
 		.pipe(babel())		
 		.pipe(sourcemaps.write())		
-		.pipe(gulp.dest('./dist/js/'))
+		.pipe(gulp.dest('./docs/js/'))
 
 }

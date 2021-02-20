@@ -56,5 +56,5 @@ module.exports.dist = function styles() {
 			overrideBrowserslist: ['last 4 versions']
 		}))		
 		.pipe(shorthand())				
-		.pipe(gulp.dest('./dist/css/'))	
+		.pipe(gulp.dest('./docs/css/'))	
 }

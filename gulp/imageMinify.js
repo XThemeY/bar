@@ -9,5 +9,5 @@ const imagemin = require('gulp-imagemin');
 
 module.exports.dist = function imgCopy() {
 	return gulp.src('src/img/*')		
-		.pipe(gulp.dest('./dist/img'))
+		.pipe(gulp.dest('./docs/img'))
 }
