@@ -1,15 +1,20 @@
 footer.footer
 	.container
-		.footer_logo
-			img(src="https://place-hold.it/120x110", alt="")
-		.footer_social
-			div.social-item
-				img(src="https://place-hold.it/25x25", alt="")
-			div.social-item
-				img(src="https://place-hold.it/25x25", alt="")
-		h4.footer_placework
-			|Sitename Since 2021
 		.footer_nav
+			.footer_nav-item
+				.footer_logo
+					img(src="https://place-hold.it/120x110", alt="")
+				.footer_social
+						a(href="#").social-item.item-telegram
+							include ../svg/telegram
+						a(href="#").social-item.item-whatsapp
+							include ../svg/whatsapp
+						a(href="#").social-item.item-instagram
+							include ../svg/instagram
+						a(href="#").social-item.item-facebook
+							include ../svg/facebook						
+				h4.footer_sitename
+					|Sitename Since 2021		
 			.footer_nav-item
 				h3.footer_nav-item-header Выездной бар	
 				ul.footer_list 
@@ -54,9 +59,9 @@ footer.footer
 					li.footer_list-item
 						a(href="#") Агенствам
 					li.footer_list-item
-						a(href="#") Все услуги
+						a(href="#") Все услуги		
 		.footer_disclaimer
 			p 
-				|Внимание! Чрезмерное употребление алкоголя вредит вашему здоровью.<br>Мы не продаем алкогольную продукцию. Цены указаны как приблизительная совокупность затрат заказчика с учетом предоставления алкогольной продукции заказчиком.<br><strong>Обращаем ваше внимание на то, что данный интернет-сайт носит исключительно информационный характер и ни при каких условиях не является публичной офертой.</strong> Внешний вид и характеристики блюд, напитков, оборудования, стоек может отличаться от фотографий на сайте. Для получения подробной информации о наличии и стоимости указанных товаров и (или) возможности оказания услуг, пожалуйста, обращайтесь к менеджерам отдела продаж. С любыми другими проблемами обращайтесь в спортлото.
+				|Внимание! Чрезмерное употребление алкоголя вредит вашему здоровью.<br>Мы не продаем алкогольную продукцию. Цены указаны как приблизительная совокупность затрат заказчика с учетом предоставления алкогольной продукции заказчиком.<br><strong>Обращаем ваше внимание на то, что данный интернет-сайт носит исключительно информационный характер и ни при каких условиях не является публичной офертой.</strong> Внешний вид и характеристики блюд, напитков, оборудования, стоек может отличаться от фотографий на сайте.<br>Для получения подробной информации о наличии и стоимости указанных товаров и (или) возможности оказания услуг, пожалуйста, обращайтесь к менеджерам отдела продаж. С любыми другими проблемами обращайтесь в спортлото.
 		.footer_rights
-			span © All Right Reserved. Boomboombar.				
+			span © All Right Reserved.				

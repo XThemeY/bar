@@ -1,8 +1,22 @@
 @import "../blocks/header";
 @import "../blocks/footer";
+@import "../mixins/media";
+@import "../utils/vars";
 
-.container{
-	max-width: 320px;
-	margin: 0 auto;
-	padding: 0 15px;	
+.container {
+    width: auto;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    @include media-tablet {
+        & {
+            max-width: $mediaWidthTablet;
+        }
+    }
+
+    @include media-pc {
+        & {
+            max-width: $mediaWidthPC;
+        }
+    }
 }

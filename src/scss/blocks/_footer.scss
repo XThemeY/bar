@@ -1,5 +1,8 @@
+@import "../mixins/media";
+
 .footer {
     background-color: #1f1f1f;
+    padding-top: 30px;
     padding-bottom: 20px;
     color: white;
     font-size: 1.2rem;
@@ -7,44 +10,185 @@
 
 .footer_logo {
     display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+    justify-content: left;
 }
 
 .footer_social {
     display: flex;
-    justify-content: center;
+    justify-content: left;
+    margin: 30px 0;
 }
 
-.footer_placework {
+.footer_sitename {
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    // margin-bottom: 30px;
 }
 
 .social-item {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+
+    & svg {
+        width: 25px;
+    }
+
     & + & {
         margin-left: 10px;
+    }
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        border-radius: 50%;
+        background-color: white;
+        transition: 0.2s ease-in;
+    }
+    &.item-telegram {
+        &:hover::after {
+            background-color: #26a5e4;
+        }
+    }
+
+    &.item-whatsapp {
+        &:hover::after {
+            background-color: #25d366;
+        }
+    }
+
+    &.item-instagram {
+        &:hover::after {
+            background-color: #e4405f;
+        }
+    }
+
+    &.item-facebook {
+        &:hover::after {
+            background-color: #1877f2;
+        }
+    }
+
+    &.item-facebook {
+        & svg {
+            width: 15px;
+        }
+    }
+}
+
+.footer_nav {
+    display: flex;
+    flex-direction: column;
+
+    @include media-tablet {
+        & {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 0 50px;
+        }
+    }
+
+    @include media-pc {
+        & {
+            flex-wrap: nowrap;
+            padding: 0;
+        }
     }
 }
 
 .footer_list {
     padding: 0;
     margin: 0;
+    a {
+        font-size: 1.2rem;
+        line-height: 1.55;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        @include media-pc {
+            & {
+                font-size: 1.4rem;
+            }
+        }
+    }
 }
 
 .footer_nav-item-header {
     font-weight: 500;
     text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    @include media-pc {
+        & {
+            font-size: 1.6rem;
+        }
+    }
 }
 
 .footer_nav-item {
     & + & {
         margin-top: 30px;
+
+        @include media-tablet {
+            & {
+                margin-top: 0;
+                margin-bottom: 30px;
+            }
+        }
+
+        @include media-pc {
+            & {
+                margin-bottom: 0;
+                padding-left: 30px;
+            }
+        }
+    }
+
+    @include media-tablet {
+        & {
+            width: 50%;
+            &:nth-last-child(2) {
+                margin-bottom: 0;
+            }
+
+            &:nth-child(2n-1) {
+                padding-right: 30px;
+            }
+
+            &:nth-child(2n) {
+                padding-left: 30px;
+            }
+        }
+    }
+
+    @include media-pc {
+        & {
+            &:nth-child(2n-1) {
+                padding-right: 0;
+            }
+
+            &:nth-last-child(2n) {
+                padding-left: 65px;
+            }
+        }
     }
 }
 
 .footer_list-item {
     font-weight: 300;
     & + & {
-        margin-top: 13.5px;
+        margin-top: 10px;
     }
 }
 
@@ -57,8 +201,8 @@
         content: "";
         position: absolute;
         top: 0;
-        left: -15px;
-        width: 111%;
+        left: 0;
+        width: 100%;
         height: 1px;
         background-color: white;
     }
@@ -67,8 +211,21 @@
         text-align: center;
         line-height: 1.55;
     }
+
+    @include media-pc {
+        & {
+            font-size: 1.4rem;
+        }
+    }
 }
 
 .footer_rights {
     text-align: center;
+
+    font-weight: 700;
+    @include media-pc {
+        & {
+            font-size: 1.4rem;
+        }
+    }
 }
