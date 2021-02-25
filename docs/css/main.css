@@ -59,6 +59,7 @@
 
 @media (min-width: 1200px) {
   .content-main {
+    min-height: 550px;
     padding-left: 20px;
     padding-right: 20px;
   }

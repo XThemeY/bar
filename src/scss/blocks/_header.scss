@@ -52,6 +52,7 @@
 
     @include media-pc {
         & {
+            min-height: 550px;
             padding-left: 20px;
             padding-right: 20px;
         }
@@ -307,7 +308,7 @@
 }
 
 .sidemenu-content {
-	width: 100%;
+    width: 100%;
     & > ul {
         text-align: center;
         text-transform: uppercase;
@@ -325,5 +326,3 @@
         }
     }
 }
-
-
