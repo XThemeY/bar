@@ -6,6 +6,8 @@ const fonts = require('./gulp/copyFonts')
 const script = require('./gulp/script')
 const server = require('./gulp/server')
 const clear = require('./gulp/clear')
+const svg = require('./gulp/svg')
 
 exports.build = gulp.series(clear.build, gulp.parallel(pug.build,scss.build,script.build,imageMinify.build,fonts))
 exports.dist = gulp.series(clear.dist, gulp.parallel(pug.dist, scss.dist, script.dist, imageMinify.dist, fonts), gulp.parallel(server))
+exports.svg = gulp.series(svg)

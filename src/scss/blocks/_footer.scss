@@ -1,4 +1,6 @@
 @import "../mixins/media";
+@import "../base/_sprite";
+
 
 .footer {
     background-color: #1f1f1f;
@@ -32,7 +34,7 @@
     z-index: 5;
     display: flex;
     justify-content: center;
-
+	
     & svg {
         width: 25px;
     }
@@ -216,6 +218,13 @@
         & {
             font-size: 1.4rem;
         }
+    }
+}
+
+.icon-telegram {
+    font-size: 5rem;
+    &.red_mod {
+        color: red;
     }
 }
 
