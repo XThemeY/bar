@@ -38,7 +38,7 @@
 }
 
 .header-content-center {
-  background: url("../../img/header/bg.jpg") no-repeat right bottom/cover black;
+  background: url("../img/header/bg.jpg") no-repeat right bottom/cover black;
 }
 
 @media (min-width: 1200px) {
