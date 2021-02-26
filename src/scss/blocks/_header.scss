@@ -1,6 +1,10 @@
 @import "../mixins/media";
 .header {
     color: white;
+	background-image: url("../img/header/bg.jpg");
+    background-size: cover;
+    background-position: right bottom;
+    background-repeat: no-repeat;
 }
 
 .header-nav {
@@ -17,23 +21,24 @@
     }
 }
 
-.header-content-top {
-    background-color: white;
+.header-wrapper__top {
+    background-color: rgb(255, 255, 255);
     @include media-pc {
         & {
-            background-color: black;
+            background-color: transparent;
             padding-left: 30px;
             padding-right: 30px;
         }
     }
 }
 
-.header-content-center {
+.header-wrapper__center {
     background-color: black;
     background-image: url("../img/header/bg.jpg");
     background-size: cover;
     background-position: right bottom;
     background-repeat: no-repeat;
+	max-height: 500px;
     @include media-pc {
         & {
             background-color: black;
@@ -43,7 +48,7 @@
     }
 }
 
-.header-logo {
+.logo {
     margin: 0 20px;
 }
 
@@ -52,7 +57,6 @@
 
     @include media-pc {
         & {
-            min-height: 550px;
             padding-left: 20px;
             padding-right: 20px;
         }
@@ -111,7 +115,7 @@
     }
 }
 
-.header-nav__list {
+.nav__list {
     font-weight: 700;
     font-size: 1.3rem;
     text-transform: uppercase;
@@ -162,7 +166,6 @@
     transition: all 0.7s ease;
     & > * {
         width: 33.33%;
-        height: 240px;
     }
 }
 

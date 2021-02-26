@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
 	const overlay = document.querySelector('#overlay')
 	const body = document.querySelector('body')
 
-	console.log("toggleMenu", toggleMenu)
 	toggleMenu.addEventListener('click', function () {
 		this.classList.toggle('active')
 		sideMenu.classList.toggle('active')

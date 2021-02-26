@@ -1,7 +1,7 @@
+@import "../utils/vars";
+@import "../mixins/media";
 @import "../blocks/header";
 @import "../blocks/footer";
-@import "../mixins/media";
-@import "../utils/vars";
 
 .container {
     width: auto;
@@ -62,4 +62,8 @@
     &.active {
         display: block;
     }
+}
+
+.icons--black-mod {
+    color: black;
 }
