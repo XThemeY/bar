@@ -1,5 +1,47 @@
 @import url(../../node_modules/normalize.css/normalize.css);
 
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+}
+
+.icon-download {
+  font-size: 51.2rem;
+  width: 1em;
+}
+
+.icon-facebook {
+  font-size: 51.2rem;
+  width: 0.625em;
+}
+
+.icon-instagram {
+  font-size: 51.2rem;
+  width: 0.875em;
+}
+
+.icon-pencil {
+  font-size: 51.2rem;
+  width: 1em;
+}
+
+.icon-phone {
+  font-size: 51.2rem;
+  width: 1em;
+}
+
+.icon-telegram {
+  font-size: 51.2rem;
+  width: 0.875em;
+}
+
+.icon-whatsapp {
+  font-size: 51.2rem;
+  width: 0.875em;
+}
+
 .header {
   background: url("../img/header/bg.jpg") no-repeat right bottom/cover;
   color: white;
@@ -393,38 +435,6 @@
   background: #dadada;
 }
 
-.icon {
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  fill: currentColor;
-}
-
-.icon-facebook {
-  font-size: 51.2rem;
-  width: 0.625em;
-}
-
-.icon-instagram {
-  font-size: 51.2rem;
-  width: 0.875em;
-}
-
-.icon-pencil {
-  font-size: 51.2rem;
-  width: 1em;
-}
-
-.icon-telegram {
-  font-size: 51.2rem;
-  width: 0.875em;
-}
-
-.icon-whatsapp {
-  font-size: 51.2rem;
-  width: 0.875em;
-}
-
 .footer {
   padding: 40px 0;
 }
@@ -658,8 +668,9 @@
   display: block;
 }
 
-.icons--black-mod {
-  color: black;
+.btn-icons {
+  font-size: 1.3rem;
+  margin-right: 5px;
 }
 
 *,

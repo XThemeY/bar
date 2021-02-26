@@ -1,5 +1,6 @@
 @import "../utils/vars";
 @import "../mixins/media";
+@import "../base/sprite";
 @import "../blocks/header";
 @import "../blocks/footer";
 
@@ -64,6 +65,7 @@
     }
 }
 
-.icons--black-mod {
-    color: black;
+.btn-icons {
+    font-size: 1.3rem;
+    margin-right: 5px;
 }
