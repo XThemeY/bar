@@ -6,7 +6,11 @@
 }
 
 .order__form {
-    padding: 0 130px;
+    @include media-pc {
+        & {
+            padding: 0 130px;
+        }
+    }
 }
 
 .order__form-content {
@@ -18,19 +22,37 @@
     .formgroup {
         width: 100%;
         display: flex;
+        flex-direction: column;
         margin-bottom: 20px;
         .formgroup-left {
-            flex: 40%;
             display: flex;
             flex-direction: column;
+            @include media-tablet {
+                & {
+                    flex: 40%;
+                }
+            }
         }
         .formgroup-right {
-            flex: 60%;
+            @include media-tablet {
+                & {
+                    flex: 60%;
+                }
+            }
+        }
+
+        @include media-tablet {
+            & {
+                flex-direction: row;
+            }
         }
     }
 
     .formgroup--checkbox {
         margin-bottom: 20px;
+        input {
+            margin-right: 10px;
+        }
     }
 }
 
