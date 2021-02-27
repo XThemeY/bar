@@ -1,6 +1,5 @@
-@import "../../node_modules/normalize.css/normalize.css";
+//@import "../../node_modules/normalize.css/normalize.css";
 @import "./base/base";
-
 
 *,
 *::before,
@@ -58,5 +57,20 @@ p {
 
 button {
     background: transparent;
-	font-family: "Montserrat", sans-serif; 
+    font-family: "Montserrat", sans-serif;
+    &:focus {
+        outline: none;
+    }
+}
+textarea {
+    outline: none;
+    resize: none;
+    display: inline-block;
+    font-family: "Montserrat", sans-serif;
+}
+input[type="text"] {
+    font-family: "Montserrat", sans-serif;
+    &:focus {
+        outline: none;
+    }
 }

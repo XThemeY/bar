@@ -1,0 +1,19 @@
+section.order-section
+	.container
+		.section-content
+			h2.section-title.section-title--order 
+				|Заявка на услуги
+			.order__form
+				form(id="order").order__form-content
+					.formgroup
+						.formgroup-left
+							input.order__form-input(type="text" placeholder="Ваше имя")
+							input.order__form-input(type="text" placeholder="+7(___)___-__-__")
+							input.order__form-input(type="text" placeholder="Ваш Email")
+						.formgroup-right
+							textarea(name="comment"  placeholder="Комментарий к заявке").order__form-textarea
+					.formgroup--checkbox
+						input#order-policy(type="checkbox")
+						label.order-policy-text(for="order-policy")
+							|Я согласен на обработку моих персональных данных. С Политикой в отношении обработки персональных данных ознакомлен и согласен.
+					button(type="submit").btn#order__submit Отправить заявку

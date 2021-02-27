@@ -2,7 +2,9 @@
 @import "../mixins/media";
 @import "../base/sprite";
 @import "../blocks/header";
+@import "../blocks/mainpage";
 @import "../blocks/footer";
+@import "../blocks/modals/modal-callback";
 
 .container {
     width: auto;
@@ -68,4 +70,12 @@
 .btn-icons {
     font-size: 1.3rem;
     margin-right: 5px;
+}
+
+.user-select--none {
+    user-select: none;
+}
+
+.user-select--all {
+    user-select: all;
 }

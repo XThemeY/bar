@@ -43,4 +43,29 @@ document.addEventListener('DOMContentLoaded', function () {
 		menuBurgerToggle('resize')
 	})
 
+	//Вызов модального окна
+	const orderCallBtns = document.querySelectorAll('button[data-makecall]')
+	const modalCloseBtns = document.querySelectorAll('button[data-modalclose]')
+	modalCloseBtns.forEach((btn) => {
+		btn.addEventListener('click', function () {
+			document.querySelector('.modal-wrapper').classList.remove('active')
+		})
+	})
+
+	document.querySelector(".modal-wrapper").addEventListener('click', (e) => {
+		if (!e.target.closest('.modal')) {
+			document.querySelector('.modal-wrapper').classList.remove('active')
+		}
+	})
+
+	orderCallBtns.forEach((btn) => {
+		btn.addEventListener('click', function () {
+			document.querySelector('.modal-wrapper').classList.add('active')
+		})
+	})
+
+	const modalSubmitBtn = document.querySelector('#modal__submit')
+	modalSubmitBtn.addEventListener("click", function (event) {
+		event.preventDefault()
+	})
 })

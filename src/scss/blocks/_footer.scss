@@ -100,7 +100,7 @@
 
 .nav-wrapper {
     margin-bottom: 60px;
-    display: none;
+    display: none;	
     @include media-pc {
         & {
             display: block;

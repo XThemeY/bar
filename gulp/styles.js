@@ -19,8 +19,7 @@ module.exports.build = function styles() {
 				}
 			})
 		}))
-		.pipe(sassGlob())
-		.pipe(sourcemaps.init())
+		.pipe(sassGlob())		
 		.pipe(sass({
 			indentType: 'tab',
 			indentWidth: 1,
@@ -30,8 +29,7 @@ module.exports.build = function styles() {
 			overrideBrowserslist: ['last 4 versions']
 		}))		
 		.pipe(shorthand())
-		.pipe(cleanCSS({ compatibility: 'ie8' }))
-		.pipe(sourcemaps.write())
+		.pipe(cleanCSS({ compatibility: 'ie8' }))		
 		.pipe(gulp.dest('./build/css/'))
 }
 
@@ -46,7 +44,8 @@ module.exports.dist = function styles() {
 				}
 			})
 		}))
-		.pipe(sassGlob())		
+		.pipe(sassGlob())
+		.pipe(sourcemaps.init())
 		.pipe(sass({
 			indentType: 'tab',
 			indentWidth: 1,
@@ -55,6 +54,7 @@ module.exports.dist = function styles() {
 		.pipe(autoprefixer({
 			overrideBrowserslist: ['last 4 versions']
 		}))		
-		.pipe(shorthand())				
+		.pipe(shorthand())
+		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('./docs/css/'))	
 }

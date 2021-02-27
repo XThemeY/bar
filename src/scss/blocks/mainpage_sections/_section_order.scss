@@ -1,0 +1,68 @@
+.order-section {
+    background-image: url("../img/sections/order-bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.order__form {
+    padding: 0 130px;
+}
+
+.order__form-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .formgroup {
+        width: 100%;
+        display: flex;
+        margin-bottom: 20px;
+        .formgroup-left {
+            flex: 40%;
+            display: flex;
+            flex-direction: column;
+        }
+        .formgroup-right {
+            flex: 60%;
+        }
+    }
+
+    .formgroup--checkbox {
+        margin-bottom: 20px;
+    }
+}
+
+.order__form-textarea {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid #d2d2d2;
+    color: #cfcece;
+
+    &:focus {
+        border-color: #ffffff;
+    }
+}
+
+.order__form-input {
+    height: 80px;
+    padding: 0 20px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid #d2d2d2;
+    color: #cfcece;
+    &:focus {
+        border-color: #ffffff;
+    }
+}
+
+.order-policy-text {
+    color: #cfcece;
+    font-size: 1.2rem;
+}

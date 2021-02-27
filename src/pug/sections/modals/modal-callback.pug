@@ -1,0 +1,16 @@
+.modal-wrapper
+	.modal
+		.modal__form
+			.modal__header
+				|Обратный звонок
+			form(id="callback").modal__form-content
+				.formgroup
+					input.modal__form-input(type="text" placeholder="Ваше имя")
+				.formgroup
+					input.modal__form-input(type="text" placeholder="+7(___)___-__-__")
+				.formgroup.formgroup--checkbox
+					input#policy(type="checkbox")
+					label.policy-text(for="policy")
+						|Я согласен на обработку моих персональных данных. С Политикой в отношении обработки персональных данных ознакомлен и согласен.
+				button(type="submit" data-modalclose="").btn#modal__submit Оставить заявку
+		button(data-modalclose="").modal__close
