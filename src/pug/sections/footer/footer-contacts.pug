@@ -1,0 +1,30 @@
+include ../../mixins/svgMixin
+
+.footer-contacts
+	ul.contacts-list
+		li.contacts-list__item
+			a(href="tel:+").item-title.title--hover +7(999)999-99-99 
+			p.item-desc
+				|Контактный телефон
+		li.contacts-list__item
+			a(href="mailto:").item-title.title--hover info@sitename.ru
+			p.item-desc
+				|По любым вопросам
+		li.contacts-list__item
+			h4.item-title
+				|г.Москва
+			p.item-desc
+				|Адрес офиса
+		li.contacts-list__item
+			.social-block
+				a(href="#!").social-block__item
+					+icon("telegram","social-icons")
+				a(href="#!").social-block__item
+					+icon("whatsapp","social-icons")
+				a(href="#!").social-block__item
+					+icon("facebook","social-icons")
+				a(href="#!").social-block__item
+					+icon("instagram","social-icons")
+	.misc-contacts
+		button.btn.misc-contacts__item(data-makecall="") #[+icon("phone","btn-icons")] Обратный звонок
+		button.btn.misc-contacts__item #[+icon("download","btn-icons")] Презентация

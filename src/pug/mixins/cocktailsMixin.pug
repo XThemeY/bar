@@ -1,0 +1,7 @@
+mixin cocktail(pic,name,desc,mod)
+	div(class="cocktails-list__item mix " + mod)
+					.list-item__img
+						img(src=pic, alt="")
+					.list-item__desc
+						h5.item-title= name							
+						p.item-desc= desc

@@ -1,0 +1,33 @@
+.works-section {
+    background-color: #f8f8f8;
+}
+
+.section-title--works {
+    color: black;
+}
+
+.section-desc {
+    text-align: center;
+    font-size: 1.4rem;
+    margin: 0 50px 50px;
+
+    @include media-pc {
+        & {
+            margin: 0 auto 50px;
+            
+            width: 50%;
+        }
+    }
+}
+
+.section-portfolio {
+    width: 100%;
+    height: 500px;
+    margin: 50px 0;
+    background-color: rgba(0, 0, 0, 0.267);
+}
+
+.portfolio-btn {
+    width: fit-content;
+    margin: 0 auto;
+}

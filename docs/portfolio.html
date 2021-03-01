@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="libs/fancybox3/jquery.fancybox.min.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+    <title>Портфолио | Sitename</title>
+  </head>
+  <body>
+    <div id="overlay"></div>
+    <div class="modal-wrapper">
+      <div class="modal">
+        <div class="modal__form">
+          <div class="modal__header">Обратный звонок</div>
+          <form class="modal__form-content" id="callback">
+            <div class="formgroup">
+              <input class="modal__form-input" type="text" placeholder="Ваше имя"/>
+            </div>
+            <div class="formgroup">
+              <input class="modal__form-input" type="text" placeholder="+7(___)___-__-__"/>
+            </div>
+            <div class="formgroup formgroup--checkbox">
+              <input id="policy" type="checkbox"/>
+              <label class="policy-text" for="policy">Я согласен на обработку моих персональных данных. С Политикой в отношении обработки персональных данных ознакомлен и согласен.</label>
+            </div>
+            <button class="btn" type="submit" data-modalclose="" id="modal__submit">Оставить заявку</button>
+          </form>
+        </div>
+        <button class="modal__close" data-modalclose=""></button>
+      </div>
+    </div>
+    <script src="libs/jQuery/jquery-3.5.1.min.js"></script>
+    <script src="libs/mixItUp3/mixitup.min.js"> </script>
+    <script src="libs/fancybox3/jquery.fancybox.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

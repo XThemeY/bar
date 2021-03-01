@@ -68,4 +68,11 @@ document.addEventListener('DOMContentLoaded', function () {
 	modalSubmitBtn.addEventListener("click", function (event) {
 		event.preventDefault()
 	})
+
+	//mixItUp plugin
+	var mixer = mixitup('#cocktails-list', {
+		classNames: {
+			block: ""
+		}
+	});
 })

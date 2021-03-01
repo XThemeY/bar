@@ -1,0 +1,28 @@
+include ../../mixins/svgMixin
+include ../../layouts/vars
+
+header.header
+	.container
+		nav.header-nav
+				.logo
+					a(href="index.html")
+						img(src="https://place-hold.it/100x50&text=Logo&fontsize=24", alt="") 
+				button(type="button" data-makecall="").btn.order-call
+					|Заказать звонок
+				include ./header-nav.pug
+				.toggle-menu
+					span
+				nav.header-sidemenu
+					.sidemenu-content
+						ul
+							li
+								a(href="#!").link.link--aside О компании
+							li
+								a(href="#!").link.link--aside Услуги
+							li
+								a(href=cocktails).link.link--aside Коктейли
+							li
+								a(href=portfolio).link.link--aside Портфолио
+							li
+								a(href="#!").link.link--aside Контакты
+		//-target="_blank

@@ -1,7 +1,6 @@
-@import "../mixins/media";
-
 .footer {
     padding: 40px 0;
+    background-color: white;
 }
 
 .footer-contacts {
@@ -100,7 +99,7 @@
 
 .nav-wrapper {
     margin-bottom: 60px;
-    display: none;	
+    display: none;
     @include media-pc {
         & {
             display: block;

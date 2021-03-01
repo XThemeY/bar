@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com"/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="libs/fancybox3/jquery.fancybox.min.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+    <title>Коктейли | Sitename</title>
+  </head>
+  <body>
+    <div id="overlay"></div>
+    <div class="modal-wrapper">
+      <div class="modal">
+        <div class="modal__form">
+          <div class="modal__header">Обратный звонок</div>
+          <form class="modal__form-content" id="callback">
+            <div class="formgroup">
+              <input class="modal__form-input" type="text" placeholder="Ваше имя"/>
+            </div>
+            <div class="formgroup">
+              <input class="modal__form-input" type="text" placeholder="+7(___)___-__-__"/>
+            </div>
+            <div class="formgroup formgroup--checkbox">
+              <input id="policy" type="checkbox"/>
+              <label class="policy-text" for="policy">Я согласен на обработку моих персональных данных. С Политикой в отношении обработки персональных данных ознакомлен и согласен.</label>
+            </div>
+            <button class="btn" type="submit" data-modalclose="" id="modal__submit">Оставить заявку</button>
+          </form>
+        </div>
+        <button class="modal__close" data-modalclose=""></button>
+      </div>
+    </div>
+    <div class="header-wrapper">
+      <div class="bg-img"><img src="../img/backgrounds/bg-cocktails.jpg" alt=""/></div>
+      <header class="header">
+        <div class="container">
+          <nav class="header-nav">
+            <div class="logo"><a href="index.html"><img src="https://place-hold.it/100x50&amp;text=Logo&amp;fontsize=24" alt=""/></a></div>
+            <button class="btn order-call" type="button" data-makecall="">Заказать звонок</button>
+            <ul class="nav__list">
+              <li class="nav-list__item"><a class="link" href="#!">О компании</a></li>
+              <li class="nav-list__item"><a class="link" href="#!">Услуги</a>
+                <div class="sub-menu">
+                  <div class="sub-menu-item">
+                    <h3 class="item-title">Классические бары</h3>
+                    <ul class="menu_item-list">
+                      <li><a href="#!">Элемент списка</a></li>
+                      <li><a href="#!">Элемент списка</a></li>
+                      <li><a href="#!">Элемент списка</a></li>
+                      <li><a href="#!">Элемент списка</a></li>
+                      <li><a href="#!">Элемент списка</a></li>
+                      <li><a href="#!">Элемент списка</a></li>
+                    </ul>
+                  </div>
+                  <div class="sub-menu-item">
+                    <h3 class="item-title">Безалкогольные бары</h3>
+                    <ul class="menu_item-list">
+                      <li><a href="#!">Элемент списка</a></li>
+                      <li><a href="#!">Элемент списка</a></li>
+                      <li><a href="#!">Элемент списка</a></li>
+                      <li><a href="#!">Элемент списка</a></li>
+                      <li><a href="#!">Элемент списка</a></li>
+                    </ul>
+                  </div>
+                  <div class="sub-menu-item">
+                    <h3 class="item-title">Тематические бары</h3>
+                    <ul class="menu_item-list">
+                      <li><a href="#!">Элемент списка</a></li>
+                      <li><a href="#!">Элемент списка</a></li>
+                      <li><a href="#!">Элемент списка</a></li>
+                      <li><a href="#!">Элемент списка</a></li>
+                      <li><a href="#!">Элемент списка</a></li>
+                    </ul>
+                  </div>
+                  <div class="sub-menu-item">
+                    <h3 class="item-title">Допольнительно</h3>
+                    <ul class="menu_item-list">
+                      <li><a href="#!">Элемент списка</a></li>
+                      <li><a href="#!">Элемент списка</a></li>
+                      <li><a href="#!">Элемент списка</a></li>
+                      <li><a href="#!">Элемент списка</a></li>
+                      <li><a href="#!">Элемент списка</a></li>
+                    </ul>
+                  </div>
+                  <div class="sub-menu-item"></div>
+                  <div class="sub-menu-item">
+                    <h3 class="item-title">Новинки</h3>
+                    <ul class="menu_item-list">
+                      <li><a href="#!">Элемент списка</a></li>
+                      <li><a href="#!">Элемент списка</a></li>
+                      <li><a href="#!">Элемент списка</a></li>
+                      <li><a href="#!">Элемент списка</a></li>
+                      <li><a href="#!">Элемент списка</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-list__item"><a class="link" href="/cocktails.html">Коктейли</a></li>
+              <li class="nav-list__item"><a class="link" href="/portfolio.html">Портфолио</a></li>
+              <li class="nav-list__item"><a class="link" href="#!">Контакты</a></li>
+              <li class="make-call-block"><a class="link" href="tel:+7(999)999-99-99">+7(999)999-99-99</a>
+                <button class="btn order-call" type="button" data-makecall="">Заказать звонок</button>
+              </li>
+            </ul>
+            <div class="toggle-menu"><span></span></div>
+            <nav class="header-sidemenu">
+              <div class="sidemenu-content">
+                <ul>
+                  <li><a class="link link--aside" href="#!">О компании</a></li>
+                  <li><a class="link link--aside" href="#!">Услуги</a></li>
+                  <li><a class="link link--aside" href="/cocktails.html">Коктейли</a></li>
+                  <li><a class="link link--aside" href="/portfolio.html">Портфолио</a></li>
+                  <li><a class="link link--aside" href="#!">Контакты</a></li>
+                </ul>
+              </div>
+            </nav>
+          </nav>
+        </div>
+      </header>
+      <div class="container">
+        <div class="content-main coctails-main">
+          <div class="content-desc coctails-desc">
+            <h1>Коктейльная карта</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem quod aspernatur quia odio distinctio in harum quasi, at porro expedita corrupti id voluptate autem aperiam cupiditate sapiente maxime doloribus ipsum!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="cocktails-section">
+      <div class="container">
+        <div class="cocktail-btns">
+          <button class="control-active btn btn-cocktail" type="button" data-filter=".all">Показать все</button>
+          <button class="btn btn-cocktail" type="button" data-filter=".classic">Классика</button>
+          <button class="btn btn-cocktail" type="button" data-filter=".shots">Шоты</button>
+          <button class="btn btn-cocktail" type="button" data-filter=".limonade">Лимонады</button>
+        </div>
+        <div class="break-line"></div>
+        <div class="cocktails-list" id="cocktails-list">
+              <div class="cocktails-list__item mix classic all">
+                <div class="list-item__img"><img src="https://thebartender.ru/wp-content/uploads/2019/07/clover-club.jpg" alt=""/></div>
+                <div class="list-item__desc">
+                  <h5 class="item-title">CocktailName</h5>
+                  <p class="item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+              </div>
+              <div class="cocktails-list__item mix classic all">
+                <div class="list-item__img"><img src="https://thebartender.ru/wp-content/uploads/2019/07/clover-club.jpg" alt=""/></div>
+                <div class="list-item__desc">
+                  <h5 class="item-title">CocktailName</h5>
+                  <p class="item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+              </div>
+              <div class="cocktails-list__item mix shots all">
+                <div class="list-item__img"><img src="https://thebartender.ru/wp-content/uploads/2019/07/tears-ja.jpg" alt=""/></div>
+                <div class="list-item__desc">
+                  <h5 class="item-title">CocktailName</h5>
+                  <p class="item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+              </div>
+              <div class="cocktails-list__item mix limonade all">
+                <div class="list-item__img"><img src="https://thebartender.ru/wp-content/uploads/2019/07/tarragon-sea-buckthorn.jpg" alt=""/></div>
+                <div class="list-item__desc">
+                  <h5 class="item-title">CocktailName</h5>
+                  <p class="item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+              </div>
+              <div class="cocktails-list__item mix shots all">
+                <div class="list-item__img"><img src="https://thebartender.ru/wp-content/uploads/2019/07/tears-ja.jpg" alt=""/></div>
+                <div class="list-item__desc">
+                  <h5 class="item-title">CocktailName</h5>
+                  <p class="item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+              </div>
+              <div class="cocktails-list__item mix limonade all">
+                <div class="list-item__img"><img src="https://thebartender.ru/wp-content/uploads/2019/07/tarragon-sea-buckthorn.jpg" alt=""/></div>
+                <div class="list-item__desc">
+                  <h5 class="item-title">CocktailName</h5>
+                  <p class="item-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+              </div>
+        </div>
+        <div class="cocktails-misc">
+          <p>Если Вас интересует какой-то определенный коктейль или напиток, и Вы не смогли найти его на сайте — свяжитесь с менеджером или оставьте заявку, и мы поможем Вам.</p>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="footer-wrapper">
+        <div class="container">
+          <div class="nav-wrapper">
+            <nav class="footer-nav">
+              <div class="logo"><a href="#!"><img src="https://place-hold.it/100x50&amp;text=Logo&amp;fontsize=24" alt=""/></a></div>
+              <ul class="nav__list footer-nav__list">
+                <li class="nav-list__item"><a class="link" href="#!">О компании</a></li>
+                <li class="nav-list__item"><a class="link" href="#!">Услуги</a></li>
+                <li class="nav-list__item"><a class="link" href="#!">Коктейли</a></li>
+                <li class="nav-list__item"><a class="link" href="/portfolio.html">Портфолио</a></li>
+                <li class="nav-list__item"><a class="link" href="#!">Контакты</a></li>
+              </ul>
+            </nav>
+            <div class="break-line"></div>
+          </div>
+          <div class="footer-contacts">
+            <ul class="contacts-list">
+              <li class="contacts-list__item"><a class="item-title title--hover" href="tel:+">+7(999)999-99-99 </a>
+                <p class="item-desc">Контактный телефон</p>
+              </li>
+              <li class="contacts-list__item"><a class="item-title title--hover" href="mailto:">info@sitename.ru</a>
+                <p class="item-desc">По любым вопросам</p>
+              </li>
+              <li class="contacts-list__item">
+                <h4 class="item-title">г.Москва</h4>
+                <p class="item-desc">Адрес офиса</p>
+              </li>
+              <li class="contacts-list__item">
+                <div class="social-block"><a class="social-block__item" href="#!">
+                              <svg class="icon icon-telegram social-icons">
+                                <use xlink:href="./img/sprite/sprite.svg#telegram"></use>
+                              </svg></a><a class="social-block__item" href="#!">
+                              <svg class="icon icon-whatsapp social-icons">
+                                <use xlink:href="./img/sprite/sprite.svg#whatsapp"></use>
+                              </svg></a><a class="social-block__item" href="#!">
+                              <svg class="icon icon-facebook social-icons">
+                                <use xlink:href="./img/sprite/sprite.svg#facebook"></use>
+                              </svg></a><a class="social-block__item" href="#!">
+                              <svg class="icon icon-instagram social-icons">
+                                <use xlink:href="./img/sprite/sprite.svg#instagram"></use>
+                              </svg></a></div>
+              </li>
+            </ul>
+            <div class="misc-contacts">
+              <button class="btn misc-contacts__item" data-makecall="">
+                          <svg class="icon icon-phone btn-icons">
+                            <use xlink:href="./img/sprite/sprite.svg#phone"></use>
+                          </svg> Обратный звонок
+              </button>
+              <button class="btn misc-contacts__item">
+                          <svg class="icon icon-download btn-icons">
+                            <use xlink:href="./img/sprite/sprite.svg#download"></use>
+                          </svg> Презентация
+              </button>
+            </div>
+          </div>
+          <div class="copyright">
+            <p>&copy; Sitename, 2021</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="libs/jQuery/jquery-3.5.1.min.js"></script>
+    <script src="libs/mixItUp3/mixitup.min.js"> </script>
+    <script src="libs/fancybox3/jquery.fancybox.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

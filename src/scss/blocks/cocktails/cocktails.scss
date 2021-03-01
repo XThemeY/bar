@@ -1,0 +1,126 @@
+.content-main {
+    .coctails-desc {
+        text-align: center;
+        max-width: 100%;
+        margin-top: 90px;
+
+        h1 {
+            font-size: 3rem;
+            @include media-tablet {
+                & {
+                    font-size: 4.8rem;
+                }
+            }
+        }
+
+        p {
+            font-size: 1.4rem;
+            @include media-tablet {
+                & {
+                    font-size: 1.6rem;
+                }
+            }
+        }
+
+        @include media-pc {
+            & {
+                padding: 0 250px;
+            }
+        }
+    }
+}
+
+.cocktails-section {
+    margin: 40px 0;
+    .break-line {
+        margin-bottom: 50px;
+        
+        @include media-tablet {
+            & {
+                margin-bottom: 100px;
+            }
+        }
+    }
+}
+
+.cocktails-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include media-tablet {
+        & {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+    }
+}
+
+.cocktails-list__item {
+    border: 1px solid rgb(237, 237, 237);
+    margin-bottom: 20px;
+    width: 370px;
+    @include media-tablet {
+        & {
+            width: 30%;
+        }
+    }
+    .list-item__img {
+        margin-bottom: 35px;
+    }
+
+    .list-item__desc {
+        font-size: 1.4rem;
+        text-align: center;
+        margin-bottom: 20px;
+        .item-title {
+            color: #0a0a0a;
+            font-weight: 600;
+            margin-bottom: 30px;
+            padding: 0 10px;
+        }
+
+        .item-desc {
+            color: #747474;
+            font-weight: 400;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+            text-transform: lowercase;
+        }
+    }
+}
+
+.cocktail-btns {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.btn {
+    &.btn-cocktail {
+        border: none;
+        color: #333333;
+        &:hover {
+            color: #a0ce4e;
+        }
+        &.control-active {
+            color: #a0ce4e;
+        }
+    }
+}
+
+.cocktails-misc {
+    color: #747474;
+    padding-top: 40px;
+
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 500;
+    @include media-tablet {
+        & {
+            padding-left: 200px;
+            padding-right: 200px;
+        }
+    }
+}
