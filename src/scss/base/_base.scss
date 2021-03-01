@@ -4,6 +4,7 @@
 @import "../blocks/header";
 @import "../blocks/mainpage/mainpage";
 @import "../blocks/cocktails/cocktails";
+@import "../blocks/bar-calc";
 @import "../blocks/footer";
 @import "../blocks/modals/modal-callback";
 
@@ -83,4 +84,34 @@
 
 .user-select--all {
     user-select: all;
+}
+
+.page-desc {
+    text-align: center;
+    max-width: 100%;
+    margin-top: 90px;
+
+    h1 {
+        font-size: 3rem;
+        @include media-tablet {
+            & {
+                font-size: 4.8rem;
+            }
+        }
+    }
+
+    p {
+        font-size: 1.4rem;
+        @include media-tablet {
+            & {
+                font-size: 1.6rem;
+            }
+        }
+    }
+
+    @include media-pc {
+        & {
+            padding: 0 250px;
+        }
+    }
 }

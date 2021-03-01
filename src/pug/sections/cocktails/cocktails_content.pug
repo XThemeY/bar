@@ -1,19 +1,2 @@
-include ../../mixins/cocktailsMixin
-
-section.cocktails-section
-	.container
-		.cocktail-btns
-			button(type="button" data-filter=".all").control-active.btn.btn-cocktail Показать все
-			button(type="button" data-filter=".classic").btn.btn-cocktail Классика
-			button(type="button" data-filter=".shots").btn.btn-cocktail Шоты
-			button(type="button" data-filter=".limonade").btn.btn-cocktail Лимонады
-		.break-line
-		.cocktails-list#cocktails-list
-			+cocktail("https://thebartender.ru/wp-content/uploads/2019/07/clover-club.jpg","CocktailName","Lorem ipsum dolor sit amet, consectetur adipisicing elit.","classic all")
-			+cocktail("https://thebartender.ru/wp-content/uploads/2019/07/clover-club.jpg","CocktailName","Lorem ipsum dolor sit amet, consectetur adipisicing elit.","classic all")
-			+cocktail("https://thebartender.ru/wp-content/uploads/2019/07/tears-ja.jpg","CocktailName","Lorem ipsum dolor sit amet, consectetur adipisicing elit.","shots all")
-			+cocktail("https://thebartender.ru/wp-content/uploads/2019/07/tarragon-sea-buckthorn.jpg","CocktailName","Lorem ipsum dolor sit amet, consectetur adipisicing elit.","limonade all")
-			+cocktail("https://thebartender.ru/wp-content/uploads/2019/07/tears-ja.jpg","CocktailName","Lorem ipsum dolor sit amet, consectetur adipisicing elit.","shots all")
-			+cocktail("https://thebartender.ru/wp-content/uploads/2019/07/tarragon-sea-buckthorn.jpg","CocktailName","Lorem ipsum dolor sit amet, consectetur adipisicing elit.","limonade all")
-		.cocktails-misc
-			p Если Вас интересует какой-то определенный коктейль или напиток, и Вы не смогли найти его на сайте — свяжитесь с менеджером или оставьте заявку, и мы поможем Вам.
+include ./section_cocktails
+include ../section_order
