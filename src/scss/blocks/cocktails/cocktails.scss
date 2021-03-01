@@ -34,7 +34,7 @@
     margin: 40px 0;
     .break-line {
         margin-bottom: 50px;
-        
+
         @include media-tablet {
             & {
                 margin-bottom: 100px;
@@ -73,7 +73,7 @@
     .list-item__desc {
         font-size: 1.4rem;
         text-align: center;
-        margin-bottom: 20px;
+
         .item-title {
             color: #0a0a0a;
             font-weight: 600;
@@ -121,6 +121,18 @@
         & {
             padding-left: 200px;
             padding-right: 200px;
+        }
+    }
+}
+
+.btn {
+    &.shop-btn {
+        float: right;
+        border-radius: 0%;
+        padding: 10px;
+        &:hover {
+            color: red;
+            border-color: #a0ce4e;
         }
     }
 }
