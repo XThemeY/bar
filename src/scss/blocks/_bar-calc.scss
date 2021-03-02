@@ -1,4 +1,128 @@
 .bar-calc-section {
-	width: 100%;
-    height: 200px;
+    width: 100%;
+    height: 500px;
+    padding: 50px 0;
+    font-family: "Roboto", sans-serif;
+}
+
+.slider-ui {
+    position: relative;
+    width: 500px;
+    height: 50px;
+    margin: 70px 0;
+}
+.slider-ui input {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    cursor: pointer;
+    opacity: 0;
+}
+.slider-ui .bar {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #000;
+    border-radius: 50px;
+    box-shadow: 0 5px 0 rgba(0, 0, 0, 0.1);
+}
+.slider-ui .min,
+.slider-ui .max {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #fff;
+}
+.slider-ui .min {
+    left: 2%;
+}
+.slider-ui .max {
+    right: 2%;
+}
+.slider-ui .track {
+    position: absolute;
+    z-index: 3;
+    left: 25px;
+    right: 25px;
+    top: 0;
+    bottom: 0;
+    display: flex;
+}
+.slider-ui .value {
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #000;
+    background-color: #fff;
+    border: 4px solid #000;
+    border-radius: 100%;
+    transform: translateX(-50%);
+    transition: top 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.slider-ui.color1 .bar {
+    background-color: #4caf50;
+}
+.slider-ui.color1 .value {
+    border-color: #4caf50;
+}
+.slider-ui .value.up {
+    top: -110%;
+    color: #000;
+}
+.marks {
+    position: relative;
+    display: flex;
+    width: 100%;
+    .markup {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border-right: 2px solid #e5e5e5;
+
+        &:first-child {
+            border-left: none;
+            &::after {
+                border-left: none;
+            }
+        }
+
+        &:last-child {
+            border-right: none;
+        }
+
+        &::after {
+            position: absolute;
+            content: "";
+            width: 7px;
+            height: 7px;
+            top: -7px;
+            left: -2px;
+            border-left: 2px solid #e5e5e5;
+        }
+
+        span {
+            position: absolute;
+            top: -20px;
+            right: -8px;
+            font-size: 1.1rem;
+            font-weight: 800;
+        }
+    }
 }
