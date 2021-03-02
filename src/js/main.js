@@ -81,43 +81,43 @@ document.addEventListener('DOMContentLoaded', function () {
 	}
 
 
-	const sliders = document.querySelectorAll(".slider-ui");
+	const sliders = document.querySelectorAll(".slider-ui")
+
 
 	sliders.forEach(slider => {
-		let input = slider.querySelector("input[type=range]");
-		let min = input.getAttribute("min");
-		let max = input.getAttribute("max");
-		let valueElem = slider.querySelector(".value");
+		let input = slider.querySelector("input[type=range]")
+		let min = input.getAttribute("min")
+		let max = input.getAttribute("max")
+		let valueElem = slider.querySelector(".value")
+		let slidersMarkUps = slider.querySelector(".marks")
 
-		slider.querySelector(".min").innerText = min;
-		slider.querySelector(".max").innerText = max;
-		const markups = max / 25
+		slider.querySelector(".min").innerText = min
+		slider.querySelector(".max").innerText = max
 
 		function setValueElem() {
-			valueElem.innerText = input.value;
-			let percent = (input.value - min) / (max - min) * 100;
-			valueElem.style.left = percent + "%";
+			valueElem.innerText = input.value
+			let percent = (input.value - min) / (max - min) * 100
+			valueElem.style.left = percent + "%"
 		}
-		setValueElem();
+		setValueElem()
 
-		input.addEventListener("input", setValueElem);
-		input.addEventListener("mousedown", () => {
-			valueElem.classList.add("up");
-		});
-		input.addEventListener("mouseup", () => {
-			valueElem.classList.remove("up");
-		});
+		input.addEventListener("input", setValueElem)
+
+
+		const sliderGuestValue = parseInt(input.value)
+		const markups = max / sliderGuestValue
+		let generalValue = sliderGuestValue
+		for (let i = 1; i <= markups; i++) {
+
+			let block = document.createElement('div')
+			block.classList.add('markup')
+			if (i != markups) {
+				block.innerHTML = `<span>${generalValue}</span>`
+			}
+
+			slidersMarkUps.appendChild(block)
+			generalValue = generalValue + sliderGuestValue
+		}
 	});
-
-	const slidersMarkUp = document.querySelector(".track")
-
-	
-	// for (let index = 0; index < 12; index++) {
-	// 	let block = document.createElement('div')
-	// 	block.classList.add('markup')
-	// 	block.innerHTML = "<span>25</span>"
-	// 	slidersMarkUp.appendChild(block)
-	// }
-
 
 })

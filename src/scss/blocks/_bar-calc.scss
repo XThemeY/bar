@@ -10,6 +10,11 @@
     width: 500px;
     height: 50px;
     margin: 70px 0;
+    @include media-pc {
+        & {
+            height: 35px;
+        }
+    }
 }
 .slider-ui input {
     position: absolute;
@@ -27,7 +32,7 @@
     right: 0;
     top: 0;
     bottom: 0;
-    background-color: #000;
+    background-color: #4caf50;
     border-radius: 50px;
     box-shadow: 0 5px 0 rgba(0, 0, 0, 0.1);
 }
@@ -72,20 +77,17 @@
     background-color: #fff;
     border: 4px solid #000;
     border-radius: 100%;
+    border-color: #4caf50;
     transform: translateX(-50%);
     transition: top 0.3s ease-in-out, color 0.3s ease-in-out;
+    @include media-pc {
+        & {
+            width: 35px;
+            height: 35px;
+        }
+    }
 }
 
-.slider-ui.color1 .bar {
-    background-color: #4caf50;
-}
-.slider-ui.color1 .value {
-    border-color: #4caf50;
-}
-.slider-ui .value.up {
-    top: -110%;
-    color: #000;
-}
 .marks {
     position: relative;
     display: flex;
@@ -115,14 +117,32 @@
             top: -7px;
             left: -2px;
             border-left: 2px solid #e5e5e5;
+            @include media-pc {
+                & {
+                    top: auto;
+                    bottom: -12px;
+                }
+            }
         }
 
         span {
             position: absolute;
-            top: -20px;
+            top: -19px;
             right: -8px;
             font-size: 1.1rem;
             font-weight: 800;
+            @include media-pc {
+                & {
+                    top: auto;
+                    bottom: -25px;
+                }
+            }
         }
+    }
+}
+
+.slider-ui.slider_2,.slider-ui.slider_3 {
+    span {
+        right: -4px;
     }
 }
