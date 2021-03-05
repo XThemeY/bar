@@ -6,6 +6,7 @@ mixin cocktail(pic,name,desc,mod)
 		.list-item__desc
 			h5.item-title= name
 			p.item-desc= desc
-		button.btn.shop-btn
-			+icon("shopping-cart","shop-icons")
-				
+		.item-order
+			input(type="number" name="" min="0" value="0").item-amount
+			button.btn.shop-btn
+				+icon("shopping-cart","shop-icons")

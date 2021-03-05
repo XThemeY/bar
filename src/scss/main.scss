@@ -74,3 +74,9 @@ input[type="text"] {
         outline: none;
     }
 }
+
+.clearfix::after { 
+	content: "";
+	clear: both;
+	display: block;
+  }

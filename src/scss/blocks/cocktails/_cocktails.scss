@@ -61,6 +61,25 @@
             text-transform: lowercase;
         }
     }
+
+    .item-order {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .item-amount {
+            text-align: center;
+            width: 50px;
+            height: 30px;
+            margin-bottom: 5px;
+            font-weight: 600;
+            border: 1px solid #a0ce4e;
+            border-radius: 5px;
+            &::-webkit-inner-spin-button,
+            &::-webkit-outer-spin-button {
+                opacity: 1;
+            }
+        }
+    }
 }
 
 .cocktail-btns {
@@ -104,12 +123,77 @@
 
 .btn {
     &.shop-btn {
-        float: right;
+        width: 50px;
         border-radius: 0%;
-        padding: 10px;
+        padding: 5px;
+        border: none;
         &:hover {
             color: red;
-            border-color: #a0ce4e;
         }
+    }
+}
+
+.shopping-cart {
+    min-width: 50px;
+    width: fit-content;
+    padding: 5px 0;
+    background: #a0ce4e;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: 2px solid #a0ce4e;
+    position: fixed;
+    top: 100px;
+    right: 0;
+    .cart-icon {
+        text-align: center;
+
+        .shop-icons {
+            font-size: 3rem;
+        }
+    }
+
+    .cart-item {
+        display: flex;
+		justify-content: center;
+        font-size: 2rem;
+        padding: 5px;
+        .cocktail-title {
+            margin-right: 5px;
+        }
+        .cocktail-amount {
+            width: 50px;
+            border: none;
+            font-weight: 600;
+            font-size: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 5px;
+            background: #a0ce4e;
+        }
+    }
+
+    .break-line {
+        margin-bottom: 0px;
+    }
+
+    .btn.btn-calc {
+        color: black;
+        border-color: black;
+        &:hover {
+            color: rgba(0, 0, 0, 0.7);
+            border-color: rgba(0, 0, 0, 0.7);
+        }
+    }
+
+    .break-line.upside-down {
+        &::after {
+            background: radial-gradient(
+                ellipse at 50% 150%,
+                rgba(0, 0, 0, 0.5) 0,
+                rgba(255, 255, 255, 0) 65%
+            );
+        }
+    }
+    .shop-btn {
+        text-align: center;
     }
 }

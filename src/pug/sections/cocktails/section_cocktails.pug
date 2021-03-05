@@ -1,6 +1,14 @@
 include ../../mixins/cocktailsMixin
 
 section.cocktails-section
+	.shopping-cart
+		.cart-icon
+			+icon("shopping-cart","shop-icons")
+		.break-line
+		.cart-items-list
+		.break-line.upside-down
+		.shop-btn
+			a.btn.btn-calc(href=bar_calc) #[+icon("pencil","btn-icons")] Калькулятор
 	.container
 		.cocktail-btns
 			button(type="button" data-filter=".all").control-active.btn.btn-cocktail Все
@@ -9,11 +17,11 @@ section.cocktails-section
 			button(type="button" data-filter=".limonade").btn.btn-cocktail Лимонады
 		.break-line
 		.cocktails-list#cocktails-list
-			+cocktail("https://thebartender.ru/wp-content/uploads/2019/07/clover-club.jpg","CocktailName","Lorem ipsum dolor sit amet, consectetur adipisicing elit.","classic all")
-			+cocktail("https://thebartender.ru/wp-content/uploads/2019/07/clover-club.jpg","CocktailName","Lorem ipsum dolor sit amet, consectetur adipisicing elit.","classic all")
-			+cocktail("https://thebartender.ru/wp-content/uploads/2019/07/tears-ja.jpg","CocktailName","Lorem ipsum dolor sit amet, consectetur adipisicing elit.","shots all")
-			+cocktail("https://thebartender.ru/wp-content/uploads/2019/07/tarragon-sea-buckthorn.jpg","CocktailName","Lorem ipsum dolor sit amet, consectetur adipisicing elit.","limonade all")
-			+cocktail("https://thebartender.ru/wp-content/uploads/2019/07/tears-ja.jpg","CocktailName","Lorem ipsum dolor sit amet, consectetur adipisicing elit.","shots all")
-			+cocktail("https://thebartender.ru/wp-content/uploads/2019/07/tarragon-sea-buckthorn.jpg","CocktailName","Lorem ipsum dolor sit amet, consectetur adipisicing elit.","limonade all")
+			+cocktail("https://thebartender.ru/wp-content/uploads/2019/07/clover-club.jpg","CocktailName1","Lorem ipsum dolor sit amet, consectetur adipisicing elit.","classic all")
+			+cocktail("https://thebartender.ru/wp-content/uploads/2019/07/clover-club.jpg","CocktailName2","Lorem ipsum dolor sit amet, consectetur adipisicing elit.","classic all")
+			+cocktail("https://thebartender.ru/wp-content/uploads/2019/07/tears-ja.jpg","CocktailName3","Lorem ipsum dolor sit amet, consectetur adipisicing elit.","shots all")
+			+cocktail("https://thebartender.ru/wp-content/uploads/2019/07/tarragon-sea-buckthorn.jpg","CocktailName4","Lorem ipsum dolor sit amet, consectetur adipisicing elit.","limonade all")
+			+cocktail("https://thebartender.ru/wp-content/uploads/2019/07/tears-ja.jpg","CocktailName5","Lorem ipsum dolor sit amet, consectetur adipisicing elit.","shots all")
+			+cocktail("https://thebartender.ru/wp-content/uploads/2019/07/tarragon-sea-buckthorn.jpg","CocktailName6","Lorem ipsum dolor sit amet, consectetur adipisicing elit.","limonade all")
 		.cocktails-misc
 			p Если Вас интересует какой-то определенный коктейль или напиток, и Вы не смогли найти его на сайте — свяжитесь с менеджером или оставьте заявку, и мы поможем Вам.

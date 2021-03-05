@@ -10,7 +10,14 @@ document.addEventListener('DOMContentLoaded', function () {
 	let rangeSum = getTotalSum();
 	let inputSum = 0;
 
+	const cocktailsList = document.querySelector(".shopping-cocktails")
+	renderCartItem()
+
+	const cocktailDelBtns = document.querySelectorAll('.shopping-cocktails .delete')
+	const cocktailAmountBtns = document.querySelectorAll('.shopping-cocktails .cocktail-amount')
+
 	setTotalSum()
+
 	inputOptions.forEach((input) => {
 		input.onchange = function () {
 			if (this.checked) {
@@ -86,4 +93,28 @@ document.addEventListener('DOMContentLoaded', function () {
 		totalSum = rangeSum + inputSum
 		totalPrice.textContent = totalSum.toString() + " руб."
 	}
+
+	function renderCartItem() {
+		for (var i = 0; i < localStorage.length; i++) {
+			cocktailsList.insertAdjacentHTML('afterbegin', `<div class="cocktail-item">
+			<div class="cocktail-title">${localStorage.key(i)}</div>
+			<input class="cocktail-amount" type="number" min="1" size="1" value=${localStorage.getItem(localStorage.key(i))}>
+			<div class="delete"></div>
+		  </div>`);
+		}
+	}
+
+	cocktailDelBtns.forEach((btn) => {
+		btn.addEventListener('click', (e) => {
+			localStorage.removeItem(e.target.parentNode.querySelector(".cocktail-title").textContent)
+e.target.parentNode.remove()
+		})
+	})
+
+	cocktailAmountBtns.forEach((input) => {
+		input.addEventListener('input', (e) => {
+			localStorage.setItem(e.target.parentNode.querySelector(".cocktail-title").textContent,e.target.value)
+		})
+
+	})
 })
