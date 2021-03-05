@@ -107,13 +107,13 @@ document.addEventListener('DOMContentLoaded', function () {
 	cocktailDelBtns.forEach((btn) => {
 		btn.addEventListener('click', (e) => {
 			localStorage.removeItem(e.target.parentNode.querySelector(".cocktail-title").textContent)
-e.target.parentNode.remove()
+			e.target.parentNode.remove()
 		})
 	})
 
 	cocktailAmountBtns.forEach((input) => {
 		input.addEventListener('input', (e) => {
-			localStorage.setItem(e.target.parentNode.querySelector(".cocktail-title").textContent,e.target.value)
+			localStorage.setItem(e.target.parentNode.querySelector(".cocktail-title").textContent, e.target.value)
 		})
 
 	})
