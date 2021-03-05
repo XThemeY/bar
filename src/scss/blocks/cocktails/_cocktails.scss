@@ -45,8 +45,11 @@
         .item-title {
             color: #0a0a0a;
             font-weight: 600;
+            font-size: 2rem;
             margin-bottom: 30px;
             padding: 0 10px;
+            letter-spacing: 0.5px;
+            font-family: "Akaya Kanadaka", cursive;
         }
 
         .item-desc {
@@ -91,7 +94,7 @@
             padding-right: 100px;
         }
     }
-	@include media-pc {
+    @include media-pc {
         & {
             padding-left: 200px;
             padding-right: 200px;

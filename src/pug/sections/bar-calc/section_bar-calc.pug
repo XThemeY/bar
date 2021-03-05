@@ -1,26 +1,163 @@
+include ../../mixins/calc-inputs_mixin
+
 section.bar-calc-section
 	.container
-		.slider-ui
-			input(type="range" min="0" max="300" step="1" value="25").slider-guests
-			.bar
-				.min
-				.max
-			.track
-				.value
-				.marks
-		.slider-ui.slider_2
-			input(type="range" min="0" max="5" step="1" value="1").slider-guests
-			.bar
-				.min
-				.max
-			.track
-				.value
-				.marks
-		.slider-ui.slider_3
-			input(type="range" min="0" max="12" step="1" value="1").slider-guests
-			.bar
-				.min
-				.max
-			.track
-				.value
-				.marks
+		.calc-wrapper
+			form.calc-form#calc-form
+				.blocks-wrapper
+					.slider-block
+						.desc-block
+							h4.block-title Количество гостей:
+							p Укажите количество гостей, пиглашенных на мероприятие
+						.slider-ui.slider_1
+							input(type="range" min="0" max="300" step="1" value="25" data-cost="100")#slider-guests
+							.bar
+								.min
+								.max
+							.track
+								.value
+								.marks
+					.slider-block
+						.desc-block
+							h4.block-title Напитков на гостя:
+							p Укажите количество напитков на 1 гостя
+						.slider-ui.slider_2
+							input(type="range" min="0" max="5" step="1" value="1" data-cost="150")#slider-drinks
+							.bar
+								.min
+								.max
+							.track
+								.value
+								.marks
+					.slider-block
+						.desc-block
+							h4.block-title Часов работы:
+							p Укажите количество часов работы бара
+						.slider-ui.slider_3
+							input(type="range" min="0" max="12" step="1" value="1" data-cost="80")#slider-hours
+							.bar
+								.min
+								.max
+							.track
+								.value
+								.marks
+				.blocks-wrapper.mb-25
+					.option-block
+						.desc-block
+							h4.block-title Что входит в стоимость:
+							p Услуги включены в расчет
+						.checkbox-ui
+							+input("checkbox","custom-checkbox","1","Специализированное оборудование","include","0", true)
+							+input("checkbox","custom-checkbox","2","Профессиональные бармены","include","0", true)
+							+input("checkbox","custom-checkbox","3","Разработка меню","include","0", true)
+							+input("checkbox","custom-checkbox","4","Закупка ингредиентов","include","0", true)
+							+input("checkbox","custom-checkbox","5","Расходные материалы","include","0", true)
+							+input("checkbox","custom-checkbox","6","Логистика и монтаж","include","0", true)
+					.option-block
+						.desc-block
+							h4.block-title Допольнительные услуги:
+							p Услуги не включены в расчет
+						.checkbox-ui
+							+input("checkbox","custom-checkbox","7","Сольное бармен шоу","option","100")
+							+input("checkbox","custom-checkbox","8","Интерактив с гостями","option","100")
+							+input("checkbox","custom-checkbox","9","Проведение мастер-класса","option","100")
+							+input("checkbox","custom-checkbox","10","Тематическое оформление","option","100")
+							+input("checkbox","custom-checkbox","11","Брендирование стойки","option","100")
+							+input("checkbox","custom-checkbox","12","Дегустация","option","100")
+					.option-block
+						.desc-block
+							h4.block-title Подача напитков:
+							p В стоимость бара включена стеклянная посуда
+						.radio-ui
+							+input("radio","custom-radio","13","Стеклянная посуда","dishes","0", true)
+							+input("radio","custom-radio","14","Одноразовые стаканы с брендированием","dishes","111")
+							+input("radio","custom-radio","15","Пакеты с брендированием","dishes","222")
+							+input("radio","custom-radio","16","Бутылки с брендированием (пластикб стекло)","dishes","333")
+					.option-block
+						.desc-block
+							h4.block-title Барная мебель:
+							p В стоимость бара включена классическая стойка
+						.radio-ui
+							+input("radio","custom-radio","17","Классическая стойка","furniture","0", true)
+							+input("radio","custom-radio","18","Стойка не нужна","furniture","111")
+							+input("radio","custom-radio","19","Стойка с подстветкой","furniture","222")
+							+input("radio","custom-radio","20","Стойка под индивидуальный заказ","furniture","333")
+				//- .blocks-wrapper.mb-40
+				//- 	.coop-block
+				//- 		.desc-block
+				//- 			h4.block-title Формат сотрудничества:
+				//- 			p Скидка предоставляется постоянным клиентам, агенствам и партнерам компании
+				//- 		.radio-ui
+				//- 			+input("radio","custom-radio","21","Новый клиент","coop")
+				//- 			+input("radio","custom-radio","22","Партнер компании","coop")
+				.blocks-wrapper.mb-35
+					.shopping-block#shopping-block
+						.desc-block
+							h4.block-title Ваши коктейли:
+							p Вы можете убрать коктейль, наведя мышкой по нему					
+						.shopping-cocktails
+							.cocktail-item
+								.cocktail-title Long Island
+								input(type="number" min="1" size="1" value="10").cocktail-amount
+								.delete
+							.cocktail-item
+								.cocktail-title Negroni
+								input(type="number" min="1" size="1" value="10").cocktail-amount
+								.delete
+							.cocktail-item
+								.cocktail-title Sex on Beach
+								input(type="number" min="1" size="1" value="10").cocktail-amount
+								.delete
+							.cocktail-item
+								.cocktail-title Long Island
+								input(type="number" min="1" size="1" value="10").cocktail-amount
+								.delete
+							.cocktail-item
+								.cocktail-title Long Island
+								input(type="number" min="1" size="1" value="10").cocktail-amount
+								.delete
+							.cocktail-item
+								.cocktail-title Long Island
+								input(type="number" min="1" size="1" value="10").cocktail-amount
+								.delete
+							.cocktail-item
+								.cocktail-title Long Island
+								input(type="number" min="1" size="1" value="10").cocktail-amount
+								.delete
+							.cocktail-item
+								.cocktail-title Long Island
+								input(type="number" min="1" size="1" value="10").cocktail-amount
+								.delete
+							.cocktail-item
+								.cocktail-title Long Island
+								input(type="number" min="1" size="1" value="10").cocktail-amount
+								.delete
+							.cocktail-item
+								.cocktail-title Long Island
+								input(type="number" min="1" size="1" value="10").cocktail-amount
+								.delete
+							.cocktail-item
+								.cocktail-title Long Island
+								input(type="number" min="1" size="1" value="10").cocktail-amount
+								.delete
+							.cocktail-item
+								.cocktail-title Long Island
+								input(type="number" min="1" size="1" value="10").cocktail-amount
+								.delete
+				.blocks-wrapper.mb-25
+					.price-block
+						span Итого
+						span#totalprice 0 руб.
+				.blocks-wrapper
+					.request-block
+						.desc-block
+							h4.block-title-form Получить расчет на почту
+							p Отправьте составленный расчет себе на почту и в ближайщее время с Вами свяжется менеджер для подтверждения информации и уточнений по заказу
+						.request-form
+							.request-input
+								input(type="text" placeholder="Ваше имя")
+							.request-input
+								input(type="text" placeholder="+7(___)___-__-__")
+							.request-input
+								input(type="text" placeholder="info@sitename.ru")
+						button.btn Отправить заявку

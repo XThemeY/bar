@@ -6,22 +6,22 @@ const rename = require('gulp-rename')
 const sourcemaps = require('gulp-sourcemaps')
 
 module.exports.build = function script() {
-	return gulp.src('src/js/main.js')		
+	return gulp.src('src/js/**/*.js')
 		.pipe(babel())
-		.pipe(uglify())		
+		.pipe(uglify())
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(gulp.dest('./build/js/'))
 
 }
 
 module.exports.dist = function script() {
-	return gulp.src('src/js/main.js')
+	return gulp.src('src/js/**/*.js')
 		// Линтеры, настроить.
 		// .pipe(eslint())
 		// .pipe(eslint.format())
 		.pipe(sourcemaps.init())
-		.pipe(babel())		
-		.pipe(sourcemaps.write())		
+		.pipe(babel())
+		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('./docs/js/'))
 
 }

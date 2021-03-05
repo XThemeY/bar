@@ -1,18 +1,33 @@
 .bar-calc-section {
     width: 100%;
-    height: 500px;
-    padding: 50px 0;
+    padding: 50px 15px;
     font-family: "Roboto", sans-serif;
+    @include media-tablet {
+        & {
+            padding: 50px 0;
+        }
+    }
 }
 
 .slider-ui {
     position: relative;
-    width: 500px;
-    height: 50px;
-    margin: 70px 0;
+    height: 5px;
+    margin: 20px 0;
+    &:hover {
+        .value {
+            @include media-pc {
+                & {
+                    top: -35px;
+                    width: 30px;
+                    height: 30px;
+                    color: #000;
+                }
+            }
+        }
+    }
     @include media-pc {
         & {
-            height: 35px;
+            height: 5px;
         }
     }
 }
@@ -44,13 +59,16 @@
     transform: translateY(-50%);
     font-size: 1.4rem;
     font-weight: 800;
-    color: #fff;
+    color: black;
+    pointer-events: none;
 }
 .slider-ui .min {
     left: 2%;
+    top: 20px;
 }
 .slider-ui .max {
     right: 2%;
+    top: 20px;
 }
 .slider-ui .track {
     position: absolute;
@@ -65,27 +83,41 @@
     position: absolute;
     z-index: 2;
     left: 50%;
-    top: 0;
-    width: 50px;
-    height: 50px;
+    top: -15px;
+    width: 30px;
+    height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.4rem;
     font-weight: 800;
-    color: #000;
+    color: transparent;
     background-color: #fff;
     border: 4px solid #000;
     border-radius: 100%;
     border-color: #4caf50;
     transform: translateX(-50%);
-    transition: top 0.3s ease-in-out, color 0.3s ease-in-out;
+    pointer-events: none;
+    transition: top 0.3s ease-in-out, color 0.3s ease-in-out,
+        width 0.3s ease-in-out, height 0.3s ease-in-out;
     @include media-pc {
         & {
-            width: 35px;
-            height: 35px;
+            top: -8px;
+            width: 20px;
+            height: 20px;
         }
     }
+}
+
+.slider_1 .value {
+    font-size: 1.2rem;
+}
+
+.slider-ui .value.up {
+    top: -35px;
+    width: 30px;
+    height: 30px;
+    color: #000;
 }
 
 .marks {
@@ -114,9 +146,10 @@
             content: "";
             width: 7px;
             height: 7px;
-            top: -7px;
+            top: 10px;
             left: -2px;
             border-left: 2px solid #e5e5e5;
+            pointer-events: none;
             @include media-pc {
                 & {
                     top: auto;
@@ -127,10 +160,11 @@
 
         span {
             position: absolute;
-            top: -19px;
+            top: 18px;
             right: -8px;
             font-size: 1.1rem;
             font-weight: 800;
+            pointer-events: none;
             @include media-pc {
                 & {
                     top: auto;
@@ -141,8 +175,427 @@
     }
 }
 
-.slider-ui.slider_2,.slider-ui.slider_3 {
+.slider-ui.slider_2,
+.slider-ui.slider_3 {
     span {
         right: -4px;
+    }
+}
+
+.calc-wrapper {
+    @include media-pc {
+        & {
+            padding: 0 100px;
+        }
+    }
+}
+
+.calc-form {
+    .slider-block {
+        padding: 20px 0;
+    }
+
+    .blocks-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        justify-content: space-between;
+        margin-bottom: 80px;
+        @include media-tablet {
+            & {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+        }
+        .input-item {
+            padding: 5px 0;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+        .desc-block {
+            text-align: center;
+            margin-bottom: 10px;
+            .block-title {
+                font-size: 1.8rem;
+                font-weight: 400;
+                margin-bottom: 5px;
+            }
+            .block-title-form {
+                font-size: 2.1rem;
+                text-transform: uppercase;
+                font-weight: 700;
+                margin-bottom: 20px;
+            }
+
+            p {
+                font-size: 1.4rem;
+                color: #73818c;
+            }
+        }
+
+        .slider-block {
+            &:first-child {
+                width: 100%;
+            }
+
+            @include media-tablet {
+                & {
+                    width: 47%;
+                }
+            }
+        }
+
+        .option-block {
+            padding-bottom: 10px;
+            font-size: 1.4rem;
+            @include media-tablet {
+                & {
+                    width: 47%;
+                }
+            }
+            .checkbox-ui {
+                display: flex;
+                flex-direction: column;
+
+                @include media-tablet {
+                    & {
+                        width: 47%;
+                    }
+                }
+            }
+
+            .radio-ui {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .custom-checkbox {
+                position: absolute;
+                z-index: -1;
+                opacity: 0;
+
+                & + label {
+                    display: inline-flex;
+                    align-items: center;
+                    user-select: none;
+                    cursor: pointer;
+                    &:before {
+                        content: "";
+                        display: inline-block;
+                        width: 1.5em;
+                        height: 1.5em;
+                        flex-shrink: 0;
+                        flex-grow: 0;
+                        border: 1px solid #dbe3ef;
+                        border-radius: 0.25em;
+                        margin-right: 0.5em;
+                        margin-bottom: 0.2em;
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                        background-size: 50% 50%;
+                    }
+                }
+                &:checked + label {
+                    &::before {
+                        border-color: #4caf50;
+                        background-color: #4caf50;
+                        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+                    }
+                }
+
+                /* стили при наведении курсора на checkbox */
+                &:not(:disabled):not(:checked) + label:hover::before {
+                    border-color: #a0ce4e;
+                }
+                /* стили для активного состояния чекбокса (при нажатии на него) */
+                &:not(:disabled):active + label::before {
+                    background-color: #4caf50;
+                    border-color: #a0ce4e;
+                }
+                /* стили для чекбокса, находящегося в фокусе */
+                &:focus + label::before {
+                    box-shadow: 0 0 0 0.2rem rgba(129, 167, 64, 0.25);
+                }
+                /* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+                &:focus:not(:checked) + label::before {
+                    border-color: #81a740;
+                }
+                /* стили для чекбокса, находящегося в состоянии disabled */
+                &:disabled + label::before {
+                    background-color: #e9ecef;
+                }
+            }
+            .custom-radio {
+                position: absolute;
+                z-index: -1;
+                opacity: 0;
+
+                & + label {
+                    display: inline-flex;
+                    align-items: center;
+                    user-select: none;
+                    &::before {
+                        content: "";
+                        display: inline-block;
+                        width: 1.5em;
+                        height: 1.5em;
+                        flex-shrink: 0;
+                        flex-grow: 0;
+                        border: 1px solid #dbe3ef;
+                        border-radius: 0.75em;
+                        margin-right: 0.5em;
+                        margin-bottom: 0.2em;
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                        background-size: 50% 50%;
+                    }
+                }
+
+                /* стили при наведении курсора на радио */
+                &:not(:disabled):not(:checked) + label:hover::before {
+                    border-color: #a0ce4e;
+                }
+                /* стили для активной радиокнопки (при нажатии на неё) */
+                &:not(:disabled):active + label::before {
+                    background-color: #4caf50;
+                    border-color: #a0ce4e;
+                }
+                /* стили для радиокнопки, находящейся в фокусе */
+                &:focus + label::before {
+                    box-shadow: 0 0 0 0.2rem rgba(129, 167, 64, 0.25);
+                }
+                /* стили для радиокнопки, находящейся в фокусе и не находящейся в состоянии checked */
+                &:focus:not(:checked) + label::before {
+                    border-color: #81a740;
+                }
+                /* стили для радиокнопки, находящейся в состоянии checked */
+                &:checked + label::before {
+                    border-color: #4caf50;
+                    background-color: #4caf50;
+                    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
+                }
+                /* стили для радиокнопки, находящейся в состоянии disabled */
+                &:disabled + label::before {
+                    background-color: #e9ecef;
+                }
+            }
+        }
+
+        .coop-block {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 1.4rem;
+            .custom-radio {
+                position: absolute;
+                z-index: -1;
+                opacity: 0;
+
+                & + label {
+                    display: inline-flex;
+                    align-items: center;
+                    user-select: none;
+                    &::before {
+                        content: "";
+                        display: inline-block;
+                        width: 1.5em;
+                        height: 1.5em;
+                        flex-shrink: 0;
+                        flex-grow: 0;
+                        border: 1px solid #dbe3ef;
+                        border-radius: 0.75em;
+                        margin-right: 0.5em;
+                        margin-bottom: 0.2em;
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                        background-size: 50% 50%;
+                    }
+                }
+
+                /* стили при наведении курсора на радио */
+                &:not(:disabled):not(:checked) + label:hover::before {
+                    border-color: #a0ce4e;
+                }
+                /* стили для активной радиокнопки (при нажатии на неё) */
+                &:not(:disabled):active + label::before {
+                    background-color: #4caf50;
+                    border-color: #a0ce4e;
+                }
+                /* стили для радиокнопки, находящейся в фокусе */
+                &:focus + label::before {
+                    box-shadow: 0 0 0 0.2rem rgba(129, 167, 64, 0.25);
+                }
+                /* стили для радиокнопки, находящейся в фокусе и не находящейся в состоянии checked */
+                &:focus:not(:checked) + label::before {
+                    border-color: #81a740;
+                }
+                /* стили для радиокнопки, находящейся в состоянии checked */
+                &:checked + label::before {
+                    border-color: #4caf50;
+                    background-color: #4caf50;
+                    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
+                }
+                /* стили для радиокнопки, находящейся в состоянии disabled */
+                &:disabled + label::before {
+                    background-color: #e9ecef;
+                }
+            }
+        }
+
+        .price-block {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 20px;
+            background: #fbfbfb;
+            color: #73818c;
+            font-size: 1.6rem;
+            font-weight: 700;
+            span {
+                &:first-child {
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        .request-block {
+            width: 100%;
+            text-align: center;
+            .desc-block {
+                margin-bottom: 40px;
+            }
+
+            p {
+                line-height: 20px;
+                @include media-pc {
+                    & {
+                        padding: 0 200px;
+                    }
+                }
+            }
+
+            .request-form {
+                margin-bottom: 60px;
+                display: flex;
+                flex-direction: column;
+
+                @include media-tablet {
+                    & {
+                        flex-direction: row;
+                        justify-content: space-around;
+                    }
+                }
+                .request-input {
+                    position: relative;
+                    width: 100%;
+                    transition: 0.3s ease-in-out;
+                    margin-top: 25px;
+
+                    input {
+                        width: 85%;
+                        border: none;
+                        padding: 5px 10px;
+                        font-size: 1.4rem;
+                    }
+                    &:after {
+                        position: absolute;
+                        content: "";
+                        display: block;
+                        width: 85%;
+                        height: 2px;
+                        bottom: 0;
+                        left: 24px;
+                        background: #dbe3ef;
+                    }
+                    &.active {
+                        &:after {
+                            background: #4caf50;
+                        }
+                    }
+                }
+            }
+        }
+
+        .shopping-block {
+            width: 100%;
+            font-size: 1.8rem;
+            padding: 10px;
+            text-align: center;
+            .shopping-cocktails {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                padding: 0 10px;
+                justify-content: center;
+
+                .cocktail-item {
+                    color: black;
+                    width: fit-content;
+                    display: flex;
+                    padding: 3px 7px;
+                    font-weight: 400;
+                    letter-spacing: 0.5px;
+                    background: white;
+                    border: 2px solid #a0ce4e;
+                    border-radius: 20px;
+                    font-family: "Akaya Kanadaka", cursive;
+                    margin: 2.5px 5px;
+                    .cocktail-title {
+                        margin-right: 5px;
+                    }
+                    .cocktail-amount {
+                        border: none;
+                        text-align: center;
+                        width: 3.2em;
+                        font-weight: 600;
+                        background: rgba(160, 207, 79, 0.2);
+
+                        border-radius: 5px;
+                        &::-webkit-inner-spin-button,
+                        &::-webkit-outer-spin-button {
+                            opacity: 1;
+                        }
+                    }
+                    .delete {
+                        position: relative;
+                        width: 1em;
+                        height: 1em;
+                        margin-left: 5px;
+                        cursor: pointer;
+                        &::after {
+                            background: rgba(255, 0, 0, 0.75);
+                            content: "";
+                            display: block;
+                            position: absolute;
+                            top: 0.6em;
+                            left: 0;
+                            width: 100%;
+                            height: 2px;
+                            transform: rotate(-45deg);
+                        }
+                        &::before {
+                            background: rgba(255, 0, 0, 0.75);
+                            content: "";
+                            display: block;
+                            position: absolute;
+                            top: 0.6em;
+                            left: 0;
+                            width: 100%;
+                            height: 2px;
+                            transform: rotate(45deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .mb-25 {
+        margin-bottom: 25px;
+    }
+
+    .mb-35 {
+        margin-bottom: 35px;
     }
 }

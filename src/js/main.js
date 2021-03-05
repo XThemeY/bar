@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function () {
 
 	const toggleMenu = document.querySelector(".toggle-menu")
@@ -102,7 +103,18 @@ document.addEventListener('DOMContentLoaded', function () {
 		setValueElem()
 
 		input.addEventListener("input", setValueElem)
-
+		input.addEventListener("mousedown", () => {
+			valueElem.classList.add("up");
+		});
+		input.addEventListener("mouseup", () => {
+			valueElem.classList.remove("up");
+		});
+		input.addEventListener("touchstart", () => {
+			valueElem.classList.add("up");
+		});
+		input.addEventListener("touchend", () => {
+			valueElem.classList.remove("up");
+		});
 
 		const sliderGuestValue = parseInt(input.value)
 		const markups = max / sliderGuestValue
@@ -119,5 +131,16 @@ document.addEventListener('DOMContentLoaded', function () {
 			generalValue = generalValue + sliderGuestValue
 		}
 	});
+
+	const calcReqInput = document.querySelectorAll('.request-input input')
+
+	calcReqInput.forEach((input) => {
+		input.addEventListener("focus", (e) => {
+			e.target.parentNode.classList.add('active')
+		})
+		input.addEventListener("blur", (e) => {
+			e.target.parentNode.classList.remove('active')
+		})
+	})
 
 })

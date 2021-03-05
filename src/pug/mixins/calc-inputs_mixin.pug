@@ -1,0 +1,4 @@
+mixin input(inputType, inputClass, inputID, desc, inputName, inputValue, check)
+	.input-item
+		input(type=inputType class=inputClass id=inputID name=inputName value=inputValue checked=check)
+		label(for=inputID)=desc
