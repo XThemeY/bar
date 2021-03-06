@@ -143,4 +143,9 @@ document.addEventListener('DOMContentLoaded', function () {
 		})
 	})
 
+	$(".owl-carousel").owlCarousel({
+		loop: true,
+		nav: false,
+		singleItem: true
+	});
 })

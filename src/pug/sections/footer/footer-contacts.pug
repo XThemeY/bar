@@ -1,18 +1,18 @@
 include ../../mixins/svgMixin
+include ../../layouts/vars
 
 .footer-contacts
 	ul.contacts-list
 		li.contacts-list__item
-			a(href="tel:+").item-title.title--hover +7(999)999-99-99 
+			a(href="tel:"+phone).item-title.title--hover=phone
 			p.item-desc
 				|Контактный телефон
 		li.contacts-list__item
-			a(href="mailto:").item-title.title--hover info@sitename.ru
+			a(href="mailto:"+mail).item-title.title--hover=mail
 			p.item-desc
 				|По любым вопросам
 		li.contacts-list__item
-			h4.item-title
-				|г.Москва
+			h4.item-title=address
 			p.item-desc
 				|Адрес офиса
 		li.contacts-list__item

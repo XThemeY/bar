@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	const itemAddBtn = document.querySelectorAll('.item-order button')
 	const itemList = document.querySelector('.cart-items-list')
 	const cocktailAmountBtns = document.querySelectorAll('.item-amount')
+	const cocktailsList = document.querySelectorAll('.cocktails-list__item')
 
 	renderCartItem()
 	addEventsToDelBtns()
@@ -33,19 +34,42 @@ document.addEventListener('DOMContentLoaded', function () {
 	function addEventsToDelBtns() {
 		for (var i = 0; i < cartDelBtns.length; i++) {
 			cartDelBtns[i].addEventListener("click", function (e) {
-				localStorage.removeItem(e.target.parentNode.querySelector(".cocktail-title").textContent)
-				e.target.parentNode.remove()
+				const itemTitle = e.target.parentNode.querySelector(".cocktail-title").textContent
+				localStorage.removeItem(itemTitle)
+				e.target.parentNode.remove()				
+				cocktailsList.forEach((item) => {
+					if (itemTitle === item.querySelector(".item-title").textContent) {
+						item.querySelector(".item-amount").value = 0
+					}
+				})
 			});
 		}
 	}
 
 	cocktailAmountBtns.forEach((input) => {
 		input.addEventListener('input', (e) => {
-			localStorage.setItem(e.target.closest('.cocktails-list__item').querySelector(".item-title").textContent, e.target.value)
-			renderCartItem()
-			addEventsToDelBtns()
+			const itemTitle = e.target.closest('.cocktails-list__item').querySelector(".item-title").textContent
+			if (e.target.value !== "0") {
+				localStorage.setItem(itemTitle, e.target.value)
+				renderCartItem()
+				addEventsToDelBtns()
+			} else {
+				localStorage.removeItem(itemTitle)
+				renderCartItem()
+				addEventsToDelBtns()
+			}
+
 		})
 
 	})
+	for (var i = 0; i < localStorage.length; i++) {
+		cocktailsList.forEach((item) => {
+			if (item.querySelector(".item-title").textContent === localStorage.key(i)) {
+				item.querySelector(".item-amount").value = localStorage.getItem(localStorage.key(i))
+			}
+		})
+
+	}
+
 
 })

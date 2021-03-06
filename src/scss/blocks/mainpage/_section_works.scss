@@ -14,20 +14,60 @@
     @include media-pc {
         & {
             margin: 0 auto 50px;
-            
+
             width: 50%;
         }
     }
 }
 
 .section-portfolio {
-    width: 100%;
-    height: 500px;
+    width: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     margin: 50px 0;
-    background-color: rgba(0, 0, 0, 0.267);
+    .portfolio-item {
+        position: relative;
+        color: rgb(255, 255, 255);
+        text-shadow: -1px 1px 2px #000000;
+        font-size: 1.5rem;
+        font-weight: 500;
+        transition: 0.3s ease-in-out;
+        &::after {
+            position: absolute;
+            content: "";
+            display: block;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 4em;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        p {
+            text-align: center;
+            position: absolute;
+            padding-bottom: 10px;
+            bottom: 0;
+            left: 0;
+        }
+        &:hover {
+            scale: 1.3;
+        }
+    }
 }
 
 .portfolio-btn {
     width: fit-content;
     margin: 0 auto;
+}
+
+.owl-carousel {
+    &.owldisplay {
+        display: block;
+        @include media-tablet {
+            & {
+                display: none;
+            }
+        }
+    }
 }

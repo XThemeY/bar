@@ -1,0 +1,15 @@
+section.contacts-section
+	.container
+		.contacts-wrapper
+			.contacts-item
+				h4.item-title
+					|Телефон
+				a(href="tel:"+phone).link=phone
+			.contacts-item
+				h4.item-title
+					|Адрес
+				p.item-desc=address
+			.contacts-item
+				h4.item-title
+					|Электронная почта
+				a(href="mailto:"+mail).link=mail
