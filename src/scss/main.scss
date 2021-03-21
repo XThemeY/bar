@@ -1,6 +1,6 @@
 //@import "../../node_modules/normalize.css/normalize.css";
 /*
-Theme Name: bar
+Theme Name: cosplay
 */
 @import "./base/base";
 
@@ -19,7 +19,7 @@ body {
     margin: 0px;
     padding: 0px;
     font-family: "Montserrat", sans-serif;
-    color: black;	
+    color: black;
 }
 
 img {
@@ -78,8 +78,8 @@ input[type="text"] {
     }
 }
 
-.clearfix::after { 
-	content: "";
-	clear: both;
-	display: block;
-  }
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: block;
+}
