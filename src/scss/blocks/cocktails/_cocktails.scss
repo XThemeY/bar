@@ -130,14 +130,9 @@
     border-bottom-left-radius: 10px;
     border: 2px solid #a0ce4e;
     position: fixed;
-    top: 0;
+    top: 100px;
     right: 0;
-
-    @include media-tablet {
-        & {
-            top: 100px;
-        }
-    }
+    
     .cart-icon {
         text-align: center;
 

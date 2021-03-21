@@ -145,7 +145,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	$(".owl-carousel").owlCarousel({
 		loop: true,
-		nav: false,
-		singleItem: true
+		nav: true,
+		singleItem: true,
+		responsive: {
+			0: {
+				items: 1
+			}
+		}
 	});
 })

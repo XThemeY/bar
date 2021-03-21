@@ -21,37 +21,17 @@
 }
 
 .section-portfolio {
-    width: fit-content;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 50px 0;
-    .portfolio-item {
-        position: relative;
-        color: rgb(255, 255, 255);
-        text-shadow: -1px 1px 2px #000000;
-        font-size: 1.5rem;
-        font-weight: 500;
-        transition: 0.3s ease-in-out;
-        &::after {
-            position: absolute;
-            content: "";
-            display: block;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            height: 4em;
-            background-color: rgba(255, 255, 255, 0.3);
-        }
-        p {
-            text-align: center;
-            position: absolute;
-            padding-bottom: 10px;
-            bottom: 0;
-            left: 0;
-        }
-        &:hover {
-            scale: 1.3;
+    &.display {
+        display: none;
+        @include media-tablet {
+            & {
+                display: flex;
+            }
         }
     }
 }
@@ -62,12 +42,74 @@
 }
 
 .owl-carousel {
-    &.owldisplay {
+    position: relative;
+    &.display {
         display: block;
+        margin: 0 auto;
+        max-width: 400px;
         @include media-tablet {
             & {
                 display: none;
             }
         }
+    }
+    .owl-nav button.owl-prev {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+    .owl-nav button.owl-next {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+    }
+    .owl-nav button.owl-prev,
+    .owl-nav button.owl-next {
+        width: 20px;
+        font-size: 5rem;
+        color: rgb(255, 255, 255);
+        text-shadow: -1px 1px 2px #000000;
+    }
+}
+.portfolio-item {
+    position: relative;
+    color: rgb(255, 255, 255);
+    text-shadow: -1px 1px 2px #000000;
+    font-size: 1.5rem;
+    font-weight: 500;
+
+    transition: all 0.3s ease-in-out;
+    @include media-tablet {
+        & {
+            width: 50%;
+        }
+    }
+    @include media-pc {
+        & {
+            width: auto;
+        }
+    }
+    &::after {
+        position: absolute;
+        content: "";
+        display: block;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 4em;
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+    p {
+        text-align: center;
+        position: absolute;
+        padding-bottom: 10px;
+        bottom: 0;
+        left: 0;
+    }
+    &:hover {
+        z-index: 2;
+        transform: scale(1.05);
     }
 }
